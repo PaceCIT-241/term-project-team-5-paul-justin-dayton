@@ -1,1 +1,12 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19045479&assignment_repo_type=AssignmentRepo)
+# NFL Player Stats Database (2024 Season)
+
+A database system built with MariaDB to store and manage NFL player statistics for the 2024 season.
+
+## Database Structure
+
+The database includes the following main tables:
+- Players (personal info, team affiliation)
+- Teams (team details) 
+- Positions (player positions)
+- Player Stats (regular season total)
+
