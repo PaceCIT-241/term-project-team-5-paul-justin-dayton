@@ -30,8 +30,8 @@ CREATE TABLE players (
     FOREIGN KEY (position_id) REFERENCES positions(position_id)
 );
 
--- Season Stats Table
-CREATE TABLE season_stats (
+-- QB Season Stats Table
+CREATE TABLE qb_season_stats (
     last_name VARCHAR(50) NOT NULL,
     first_name VARCHAR(50) NOT NULL,
     season_year INT NOT NULL CHECK (season_year >= 2024),
@@ -43,12 +43,36 @@ CREATE TABLE season_stats (
     passing_touchdowns INT DEFAULT 0,
     interceptions INT DEFAULT 0,
     passer_rating DECIMAL(4,1) DEFAULT 0.0 CHECK (passer_rating BETWEEN 0 AND 158.3),
-    rushing_yards INT DEFAULT 0,
-    rushing_touchdowns INT DEFAULT 0,
+    FOREIGN KEY (last_name, first_name) REFERENCES players(last_name, first_name)
+);
+
+-- RB Season Stats Table
+CREATE TABLE rb_season_stats (
+    last_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    season_year INT NOT NULL CHECK (season_year >= 2024),
+    PRIMARY KEY (last_name, first_name, season_year),
+    games_played INT DEFAULT 0,
+    attempts INT DEFAULT 0,
+    yards INT DEFAULT 0,
+    average DECIMAL(3,1) DEFAULT 0.0,
+    touchdowns INT DEFAULT 0,
+    fumbles INT DEFAULT 0,
+    FOREIGN KEY (last_name, first_name) REFERENCES players(last_name, first_name)
+);
+
+-- WR Season Stats Table
+CREATE TABLE wr_season_stats (
+    last_name VARCHAR(50) NOT NULL,
+    first_name VARCHAR(50) NOT NULL,
+    season_year INT NOT NULL CHECK (season_year >= 2024),
+    PRIMARY KEY (last_name, first_name, season_year),
+    games_played INT DEFAULT 0,
     receptions INT DEFAULT 0,
-    receiving_yards INT DEFAULT 0,
-    receiving_touchdowns INT DEFAULT 0,
-    tackles INT DEFAULT 0,
-    sacks DECIMAL(3,1) DEFAULT 0,
+    targets INT DEFAULT 0,
+    yards INT DEFAULT 0,
+    average DECIMAL(3,1) DEFAULT 0.0,
+    touchdowns INT DEFAULT 0,
+    fumbles INT DEFAULT 0,
     FOREIGN KEY (last_name, first_name) REFERENCES players(last_name, first_name)
 );

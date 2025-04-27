@@ -1,3 +1,4 @@
+-- EXECUTION ORDER: Run this file SECOND (after schema.sql)
 USE nfl_stats;
 
 -- Insert offensive skill positions
