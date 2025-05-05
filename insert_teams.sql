@@ -1,3 +1,4 @@
+-- EXECUTION ORDER: Run this file third (after insert_positions.sql)
 USE nfl_stats;
 
 INSERT INTO teams (team_name, city, conference, division) VALUES

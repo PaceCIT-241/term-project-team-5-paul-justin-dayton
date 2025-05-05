@@ -1,4 +1,4 @@
--- EXECUTION ORDER: Run this file THIRD (after insert_positions.sql)
+-- EXECUTION ORDER: Run this file fourth (after insert_positions.sql)
 USE nfl_stats;
 
 -- Insert Players (Quarterbacks and Running Backs)

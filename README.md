@@ -10,3 +10,6 @@ The database includes the following main tables:
 - Positions (player positions)
 - Player Stats (regular season total)
 
+## Errors are Lint errors
+
+ - DB runs fine
